@@ -1,4 +1,13 @@
+/*
+
+!/online_updater/
+!/.gitignore
+!/README
+!/README.mkd
+!/RESTORE.bat
+!/UPDATE.bat
+!/vim-online-update.py
+
 *.pyc
 tmp
 var
-vim73-kaoriya-win??.zip
