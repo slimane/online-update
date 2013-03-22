@@ -61,10 +61,19 @@ def update(target_dir):
     # Show result message.
     if result == Updater.COMPLETE:
         print(_('Updated successfully.'))
+        delete(rootdir, 'vimrc')
+        delete(rootdir, 'gvimrc')
     elif result == Updater.INCOMPLETE:
         print(_('Incomplete update, retry later.'))
     elif result == Updater.STAY:
         print(_('No updates found.'))
+
+def delete(target_dir, file_name):
+    rootdir = target_dir.strip('"\'')
+    fullPath = os.path.join(rootdir, file_name)
+
+    if os.path.exists(fullPath):
+        os.remove(fullPath)
 
 if __name__ == '__main__':
     #logging.basicConfig(level=logging.INFO)
